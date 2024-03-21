@@ -32,13 +32,25 @@ const teamMember =[
 ]
 
 consolePrintTeamMember()
-
+createListOfTeamMember()
 
 function consolePrintTeamMember(){
     for(let val of teamMember){
         console.log(`
-        Nome: ${val.name}; Ruolo:${val.role};
+        Nome: ${val.name};
+        Ruolo:${val.role};
         Nome foto:${val.photo};
         `);
+    }
+}
+
+function createListOfTeamMember(){
+    const bodyEl = document.querySelector('body');
+    const ulEl = document.createElement('ul');
+    bodyEl.appendChild(ulEl);
+    for(let i=0; i<teamMember.length; i++){
+        const liEl = document.createElement('li');
+        liEl.innerHTML = `Nome: ${teamMember[i].name}; &nbsp Ruolo:${teamMember[i].role}; &nbsp Nome foto:${teamMember[i].photo};`
+        ulEl.appendChild(liEl);
     }
 }
