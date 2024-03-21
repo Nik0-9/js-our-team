@@ -35,6 +35,8 @@ consolePrintTeamMember()
 
 createListOfTeamMemberWithImage()
 
+printInDomWithCard()
+
 function consolePrintTeamMember(){
     for(let val of teamMember){
         console.log(`
@@ -58,10 +60,11 @@ function consolePrintTeamMember(){
 
 function createListOfTeamMemberWithImage(){
     const containerEl = document.querySelector('.container');
-    const divEl = document.createElement('div');
-    containerEl.appendChild(divEl);
+    const divListEl = document.createElement('div');
+    divListEl.setAttribute('id', 'list');
+    containerEl.appendChild(divListEl);
     const ulEl = document.createElement('ul');
-    divEl.appendChild(ulEl);
+    divListEl.appendChild(ulEl);
     for(let i=0; i<teamMember.length; i++){
         const liEl = document.createElement('li');
         liEl.innerHTML = `Nome: ${teamMember[i].name}; &nbsp Ruolo:${teamMember[i].role}; &nbsp <img src="img/${teamMember[i].photo}" class="w-25 p-4">`
@@ -71,5 +74,26 @@ function createListOfTeamMemberWithImage(){
 }
 
 function printInDomWithCard(){
-
+    const containerEl = document.querySelector('.container');
+    const cardIdEl = document.createElement('div');
+    cardIdEl.setAttribute('id', 'cards');
+    containerEl.appendChild(cardIdEl);
+    const rowEl = document.createElement('div');
+    rowEl.setAttribute('class', 'row');
+    // rowEl.classList.add('')
+    const colEl = document.createElement('div');
+    colEl.setAttribute('class', 'col');
+    cardIdEl.appendChild(rowEl);
+    
+    
+    for(let i=0; i<teamMember.length; i++){
+        const colEl = document.createElement('div');
+        colEl.setAttribute('class', 'card');
+        // colEl.classList.add('card');
+        rowEl.appendChild(colEl);
+        colEl.innerHTML = `
+        <img src="img/${teamMember[i].photo}">`;
+        colEl.innerHTML += `<h2 class="text-center">${teamMember[i].name}</h2>`;
+        colEl.innerHTML += `<p class="text-center">${teamMember[i].role}<p>`;
+    }
 }

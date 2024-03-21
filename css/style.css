@@ -4,6 +4,7 @@
     padding: 0;
 }
 
-img{
-    
+.card{
+    width: calc(100% / 3 - 20px);
+    margin: 10px auto;
 }
