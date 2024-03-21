@@ -4,7 +4,26 @@
     padding: 0;
 }
 
-.card{
-    width: calc(100% / 3 - 20px);
-    margin: 10px auto;
+body{
+    background-color: bisque;
+}
+
+img{
+    width: 100%;
+}
+
+.cards{
+    width: calc(100% / 3 - 40px);
+    margin: 20px 20px;
+    background-color: white;
+}
+
+.my-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    
+    margin-top: var(--bs-gutter-y);
 }

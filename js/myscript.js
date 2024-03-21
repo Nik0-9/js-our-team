@@ -79,7 +79,7 @@ function printInDomWithCard(){
     cardIdEl.setAttribute('id', 'cards');
     containerEl.appendChild(cardIdEl);
     const rowEl = document.createElement('div');
-    rowEl.setAttribute('class', 'row');
+    rowEl.setAttribute('class', 'my-row');
     // rowEl.classList.add('')
     const colEl = document.createElement('div');
     colEl.setAttribute('class', 'col');
@@ -88,8 +88,8 @@ function printInDomWithCard(){
     
     for(let i=0; i<teamMember.length; i++){
         const colEl = document.createElement('div');
-        colEl.setAttribute('class', 'card');
-        // colEl.classList.add('card');
+        // colEl.setAttribute('class', 'cards');
+        colEl.classList.add('cards');
         rowEl.appendChild(colEl);
         colEl.innerHTML = `
         <img src="img/${teamMember[i].photo}">`;
