@@ -89,7 +89,7 @@ function printInDomWithCard(){
     for(let i=0; i<teamMember.length; i++){
         const colEl = document.createElement('div');
         // colEl.setAttribute('class', 'cards');
-        colEl.classList.add('cards');
+        colEl.classList.add('my-card');
         rowEl.appendChild(colEl);
         colEl.innerHTML = `
         <img src="img/${teamMember[i].photo}">`;
