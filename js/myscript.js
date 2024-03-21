@@ -31,15 +31,6 @@ const teamMember =[
     },
 ]
 
-const photoOfMember = [
-    '<img src="img/wayne-barnett-founder-ceo.jpg" alt="image of Founder & CEO">',
-    '<img src="img/angela-caroll-chief-editor.jpg" alt="image of Chief Editor">',
-    '<img src="/img/walter-gordon-office-manager.jpg" alt="image of Office Manager">',
-    '<img src="/img/angela-lopez-social-media-manager.jpg" alt="image of Social Media Manager">',
-    '<img src="/img/scott-estrada-developer.jpg" alt="image of Developer">',
-    '<img src="/img/barbara-ramos-graphic-designer.jpg" alt="image of Graphic Designer">'
-]
-
 consolePrintTeamMember()
 
 createListOfTeamMemberWithImage()
@@ -66,9 +57,11 @@ function consolePrintTeamMember(){
 }*/
 
 function createListOfTeamMemberWithImage(){
-    const bodyEl = document.querySelector('.container');
+    const containerEl = document.querySelector('.container');
+    const divEl = document.createElement('div');
+    containerEl.appendChild(divEl);
     const ulEl = document.createElement('ul');
-    bodyEl.appendChild(ulEl);
+    divEl.appendChild(ulEl);
     for(let i=0; i<teamMember.length; i++){
         const liEl = document.createElement('li');
         liEl.innerHTML = `Nome: ${teamMember[i].name}; &nbsp Ruolo:${teamMember[i].role}; &nbsp <img src="img/${teamMember[i].photo}" class="w-25 p-4">`
@@ -77,3 +70,6 @@ function createListOfTeamMemberWithImage(){
     }
 }
 
+function printInDomWithCard(){
+
+}
