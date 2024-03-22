@@ -36,13 +36,14 @@ btnSend.addEventListener('click', (e) => {
     const nameVal = document.getElementById('name').value;
     const roleVal = document.getElementById('role').value;
     const photoVal = document.getElementById('photo').value;
-    const newMember = {
-        nome: nameVal,
+    let newMember = {
+        name: nameVal,
         role: roleVal,
         photo: photoVal,
     }
+    console.log(newMember);
     teamMember.push(newMember);
-    
+    printInDomWithCard();
 });
 
 
@@ -92,6 +93,7 @@ function createListOfTeamMemberWithImage() {
 
 function printInDomWithCard() {
     const containerEl = document.querySelector('.container-fluid');
+    containerEl.innerHTML = '';
     const cardIdEl = document.createElement('div');
     cardIdEl.setAttribute('id', 'cards');
     containerEl.appendChild(cardIdEl);
